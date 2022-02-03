@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import NewsItem from './NewsItem';
+import Spinner from './Spinner';
 
 const NewsListBlock = styled.div`
   box-sizing: border-box;
@@ -24,7 +25,7 @@ const NewsListBlock = styled.div`
 
 export default function NewsList({ category }) {
   const [articles, setArticles] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     //async사용 함수 선언
@@ -48,7 +49,7 @@ export default function NewsList({ category }) {
 
   //대기 중일 때
   if (loading) {
-    return <NewsListBlock>대기 중...</NewsListBlock>;
+    return <Spinner />;
   }
   //아직 articles 값이 설정되지 않았을 때
   if (!articles) {

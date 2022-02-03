@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const categories = [
@@ -69,6 +69,49 @@ const Category = styled(NavLink)`
   }
 `;
 
+const LoginWrap = styled.div`
+  position: absolute;
+  right: 3rem;
+`;
+
+const LoginBtn = styled.button`
+  display: flex;
+  align-content: center;
+  align-items: flex-start;
+  justify-content: center;
+  /* margin-bottom: 27px; */
+  overflow: visible;
+
+  padding: 12.375px 25.875px;
+  height: 3rem;
+  width: 14rem;
+  font-size: 18px;
+  line-height: 27px;
+  vertical-align: middle;
+  color: rgb(51, 51, 51);
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgb(254, 229, 0);
+  background-image: none;
+  background-origin: padding-box;
+  background-position: 0% 0%;
+  border: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition-delay: 0s, 0s;
+  transition-duration: 0.15s, 0.15s;
+  transition-property: border-color, box-shadow;
+  transition-timing-function: ease-in-out, ease-in-out;
+  img {
+    height: 24px;
+    margin-right: 9px;
+    vertical-align: middle;
+  }
+`;
+
+const LoginLink = styled(Link)`
+  text-decoration: none; ;
+`;
+
 export default function Categories() {
   return (
     <CategoriesBlock>
@@ -82,6 +125,17 @@ export default function Categories() {
           {c.text}
         </Category>
       ))}
+      <LoginWrap>
+        <LoginBtn>
+          <LoginLink to="/oauth">
+            <img
+              src="https://careerly.co.kr/_next/static/images/icn_kakao-7df1f24555595c3382cda634c4ecf920.png"
+              alt="kakao_login"
+            />
+            카카오로 시작하기
+          </LoginLink>
+        </LoginBtn>
+      </LoginWrap>
     </CategoriesBlock>
   );
 }
