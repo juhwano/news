@@ -1,4 +1,4 @@
-![preview]()
+![preview](https://user-images.githubusercontent.com/77667889/152310686-485ff5fa-90b0-4514-ba63-adeb7c959851.gif)
 
 ## 🎈주제
 
